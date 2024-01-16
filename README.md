@@ -1,6 +1,6 @@
 # go-basics-httpserver
 
-I find there's a lot of confusion about the differences between Handle, Handler, HandleFunc, HandlerFunc, etc.
+I find there's a lot of confusion about the differences between Handle, Handler, HandleFunc, HandlerFunc, etc. in Go's net/http package.
 
 This walkthrough takes a ground up approach to understanding what each function does by going over the various approaches to starting an http server in go and handling basic http routing.
 
