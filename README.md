@@ -101,16 +101,19 @@ How can we break these cases out into separate functions?
 ### http://localhost:8081/
 ```
 No switch case found for: /
+
 ```
 
 ### http://localhost:8081/foo
 ```
 foo: £1.00
+
 ```
 
 ### http://localhost:8081/bar
 ```
 bar: £2.00
+
 ```
 
 ## 3-web-handle-serverhttp
