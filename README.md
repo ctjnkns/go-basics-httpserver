@@ -10,7 +10,7 @@ Run each program in order, and refer to the comments in the code for a descripti
 
 
 
-##A great summary I found descirbing the same things in a slightly different way:
+## A great summary I found descirbing the same things in a slightly different way:
 https://www.integralist.co.uk/posts/understanding-golangs-func-type/
 
 Summary/Breakdown
