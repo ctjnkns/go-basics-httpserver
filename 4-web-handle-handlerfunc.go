@@ -50,7 +50,7 @@ func main() {
 	// up until now, each type that we passed into http.ListenAndServer or http.Handle had to implement a function NAMED ServerHTTP to satisfy the Handler interface.
 
 	// now we'll see how we can name those functions anything we want
-	// we're back to a single type, and we now have three separate functions (home, foo, bar) that match the ServeHTTP signature.
+	// we're back to a single struct type (thankfully), and we now have three separate functions (home, foo, bar) that match the ServeHTTP signature.
 	// we need to convince http.Handle to use our foo and bar functions instead of calling the default ServerHTTP function.
 	// enter http.HandlerFunc: an adapter that let's you register ordinary functions as an http.Handler that can be used by http.Handle
 	//
