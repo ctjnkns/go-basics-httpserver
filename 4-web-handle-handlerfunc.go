@@ -45,7 +45,7 @@ func main() {
 		func http.ListenAndServe(addr string, handler http.Handler) error
 		func http.Handle(pattern string, handler http.Handler)
 	*/
-	// http.Handle let's us call different http.Handler's depending on the string that is matched.
+	// http.Handle let's us call different http.Handlers depending on the string that is matched.
 
 	// up until now, each type that we passed into http.ListenAndServer or http.Handle had to implement a function NAMED ServerHTTP to satisfy the Handler interface.
 
