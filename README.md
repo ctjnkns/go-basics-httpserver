@@ -40,12 +40,12 @@ func main() {
 This is a simple implementation that does not involve any route parsing.
 ListenAndServe starts Go's default http server on the specified port.
 The custom db struct implements the ServeHTTP method, which satisfies the http.Handler interface required by ListenAndServe.
-```go
-		func http.ListenAndServe(addr string, handler http.Handler) error
 
-		type Handler interface {
-			ServeHTTP(ResponseWriter, *Request)
-```
+> func http.ListenAndServe(addr string, handler http.Handler) error
+> type Handler interface {
+> 	ServeHTTP(ResponseWriter, *Request)
+> }
+
 When a url on the specified port is accessed, the ServerHTTP method is called by default.
 The same data is written to the http response writer no matter what url is visited.
 How can we display different content depending on what url/page was visited?
