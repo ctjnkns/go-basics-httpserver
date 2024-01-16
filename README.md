@@ -315,6 +315,8 @@ This is a very common way of handling basic http routing and is probably what yo
 But notice the ListenAndServe call: we're still passing in nil, which means the DefaultServeMux is used.
 For better security, we want to create a local server mux and use that instead of the default one.
 
+## 6-web-handlefunc-mux
+
 ```go
 type rupees float32
 
