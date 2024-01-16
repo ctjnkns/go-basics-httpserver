@@ -57,7 +57,7 @@ func main() {
 			ServeHTTP(ResponseWriter, *Request)
 		}
 	*/
-	// the down side is we had to create multiple duplicate struct that all implement ServeHttp method; now our structs are a mess!
+	// the down side is we had to create multiple duplicate structs that all implement ServeHttp method; now our structs are a mess!
 	// it would be better if we could call various custom methods within the same type struct instead of requiring the method to be named ServeHTTP...
 
 	http.Handle("/", db)
