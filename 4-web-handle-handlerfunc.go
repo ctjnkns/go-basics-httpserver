@@ -33,7 +33,7 @@ func main() {
 	}
 
 	// let's recap at this point:
-	// http.Handler (with an r) is an interface containing the ServerHTTP function
+	// http.Handler (with an r) is an interface (with an r) containing the ServerHTTP function
 	/*
 		type Handler interface {
 			ServeHTTP(ResponseWriter, *Request)
