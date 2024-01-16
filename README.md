@@ -269,22 +269,6 @@ Finally, we can put as many methods in our struct as we like and call them depen
 This is a huge advantage over using switch statement or defining multiple structs as we tried before
 Next, let's see how we can make this a little more concise
 
-### http://localhost:8081/
-```
-Welcome to the home page
-```
-
-### http://localhost:8081/foo
-```
-foo: £1.00
-```
-
-### http://localhost:8081/bar
-```
-bar: £2.00
-```
-
-## 
 
 ```go
 type rupees float32
@@ -330,21 +314,48 @@ This is a very common way of handling basic http routing and is probably what yo
 But notice the ListenAndServe call: we're still passing in nil, which means the DefaultServeMux is used.
 For better security, we want to create a local server mux and use that instead of the default one.
 
-### http://localhost:8081/
-```
-Welcome to the home page
+```go
+type rupees float32
+
+func (r rupees) String() string {
+	return fmt.Sprintf("£%.2f", r)
+}
+
+// database is a pseudo database that maps strings to price
+type database map[string]rupees
+
+func (db database) home(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "Welcome to the home page")
+}
+
+func (db database) foo(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "foo: %s\n", db["foo"])
+}
+
+func (db database) bar(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "bar: %s\n", db["bar"])
+}
+
+func main() {
+	db := database{
+		"foo": 1,
+		"bar": 2,
+	}
+
+	mux := http.NewServeMux()
+	mux.HandleFunc("/foo", db.foo)
+	mux.HandleFunc("/bar", db.bar)
+	mux.HandleFunc("/", db.home)
+
+	http.ListenAndServe(":8081", mux)
+
+}
+
 ```
 
-### http://localhost:8081/foo
-```
-foo: £1.00
-```
-
-### http://localhost:8081/bar
-```
-bar: £2.00
-```
-
+Now we create a mux using the NewServerMux function
+Instead of calling http.HandleFunc, we now set our handlers in our new mux using mux.HandleFunc (or whatever you may decide to call it)
+We still call http.ListenAndServe, but instead of passing in nil, we pass it our own server mux so that it uses that (with all of our registered handlers) instead of the default global one
 
 
 ## A great summary I found descirbing the same things in a slightly different way:
