@@ -40,7 +40,7 @@ func main() {
 		}
 	*/
 
-	// both http.ListenAndServe and http.Handle take http.Handler as an input parameter;
+	// both http.ListenAndServe and http.Handle take http.Handler as an input parameter:
 	/*
 		func http.ListenAndServe(addr string, handler http.Handler) error
 		func http.Handle(pattern string, handler http.Handler)
