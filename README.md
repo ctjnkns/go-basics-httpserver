@@ -1,10 +1,10 @@
 # go-basics-httpserver
 
-I find there's a lot of confusion early on about the differences between Handle, Handler, HandleFunc, HandlerFunc, etc.,
+I find there's a lot of confusion early on about the differences between Handle, Handler, HandleFunc, HandlerFunc, etc.
 
 This walkthrough takes a ground up approach to understanding what each function does by going over the various approaches to starting an http server in go and handling basic http routing.
 
-Simply clone the repo and run: go run ./*\#-program-name*
+Simply clone the repo and run: go run `./*\#-program-name*`
 
 Run each program in order, and refer to the comments in the code for a description.
 
