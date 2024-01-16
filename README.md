@@ -42,6 +42,7 @@ ListenAndServe starts Go's default http server on the specified port.
 The custom db struct implements the ServeHTTP method, which satisfies the http.Handler interface required by ListenAndServe.
 
 > func http.ListenAndServe(addr string, handler http.Handler) error
+> 
 > type Handler interface {
 > 	ServeHTTP(ResponseWriter, *Request)
 > }
