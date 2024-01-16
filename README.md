@@ -6,7 +6,7 @@ This walkthrough takes a ground up approach to understanding what each function 
 
 Simply clone the repo and run: go run `./#-program-name`
 
-Run each program in order, and refer to the comments below or in the code for a description. A basic knowledge of Go and http serveres is assumed.
+Run each program in order, and refer to the comments below or in the code for a description. A basic knowledge of Go and http servers is assumed.
 
 ## 1-web-servehttp
 
