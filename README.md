@@ -269,6 +269,7 @@ Finally, we can put as many methods in our struct as we like and call them depen
 This is a huge advantage over using switch statement or defining multiple structs as we tried before.
 Next, let's see how we can make this a little more concise.
 
+## 5-web-handlefunc
 
 ```go
 type rupees float32
