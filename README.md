@@ -6,7 +6,7 @@ This walkthrough takes a ground up approach to understanding what each function 
 
 Simply clone the repo and run: go run `./#-program-name`
 
-Run each program in order, and refer to the comments in the code for a description.
+Run each program in order, and refer to the comments below or in the code for a description. A basic knowledge of Go and http serveres is assumed.
 
 ## 1-web-servehttp
 
@@ -257,17 +257,17 @@ func main() {
 }
 ```
 
-Now we'll see how we can name those functions anything we want
+Now we'll see how we can name those functions anything we want.
 We're back to a single struct type (thankfully), and we now have three separate functions (home, foo, bar) that match the ServeHTTP signature.
 We need to convince http.Handle to use our foo and bar functions instead of calling the default ServerHTTP function.
-Enter http.HandlerFunc: an adapter that let's you register ordinary functions as an http.Handler that can be used by http.Handle
+Enter http.HandlerFunc: an adapter that let's you register ordinary functions as an http.Handler that can be used by http.Handle.
 
 > type HandlerFunc func(ResponseWriter, *Request)
 
-Now when "/foo" is matched, the db.foo function will be called INSTEAD of ServeHTTP
-Finally, we can put as many methods in our struct as we like and call them depending on which url is accessed
-This is a huge advantage over using switch statement or defining multiple structs as we tried before
-Next, let's see how we can make this a little more concise
+Now when "/foo" is matched, the db.foo function will be called INSTEAD of ServeHTTP.
+Finally, we can put as many methods in our struct as we like and call them depending on which url is accessed.
+This is a huge advantage over using switch statement or defining multiple structs as we tried before.
+Next, let's see how we can make this a little more concise.
 
 
 ```go
@@ -353,9 +353,9 @@ func main() {
 
 ```
 
-Now we create a mux using the NewServerMux function
-Instead of calling http.HandleFunc, we now set our handlers in our new mux using mux.HandleFunc (or whatever you may decide to call it)
-We still call http.ListenAndServe, but instead of passing in nil, we pass it our own server mux so that it uses that (with all of our registered handlers) instead of the default global one
+Now we create a mux using the NewServerMux function.
+Instead of calling http.HandleFunc, we now set our handlers in our new mux using mux.HandleFunc (or whatever you may decide to call it).
+We still call http.ListenAndServe, but instead of passing in nil, we pass it our own server mux so that it uses that (with all of our registered handlers) instead of the default global one.
 
 
 ## A great summary I found descirbing the same things in a slightly different way:
