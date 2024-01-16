@@ -39,7 +39,7 @@ func main() {
 	mux.HandleFunc("/bar", db.bar)
 	mux.HandleFunc("/", db.home)
 
-	// we still call http.ListenAndServe, but instead of passing in nil, we pass it our own server mux so that it uses that instead of the default global one
+	// we still call http.ListenAndServe, but instead of passing in nil, we pass it our own server mux so that it uses that (with all of our registered handlers) instead of the default global one
 	http.ListenAndServe(":8081", mux)
 
 }
