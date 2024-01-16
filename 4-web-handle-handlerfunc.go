@@ -58,7 +58,7 @@ func main() {
 		type HandlerFunc func(ResponseWriter, *Request)
 	*/
 	// now when "/foo" is matched, the db.foo function will be called INSTEAD of ServeHTTP
-	// finally, we can put as many methods in our struct as wel like and call them depending on which url is accessed
+	// finally, we can put as many methods in our struct as we like and call them depending on which url is accessed
 	// this is a huge advantage over using switch statement or defining multiple structs as we tried before
 
 	http.Handle("/foo", http.HandlerFunc(db.foo))
