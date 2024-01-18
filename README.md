@@ -310,7 +310,7 @@ func main() {
 
 The only change here is that we're using http.HandleFunc instead of http.Handle.
 HandleFunc is just a convenience wrapper that that does the same thing we were doing before a little more concisely.
-Instead of calling: http.Handle("/foo", http.HandlerFunc(db.foo)), http.HandleFunc expects us to be returning a custom function and does the http.HanderFunc for us.
+Instead of calling: http.Handle("/foo", http.HandlerFunc(db.foo)), http.HandleFunc expects us to be using a custom function and does the http.HanderFunc for us.
 This is a very common way of handling basic http routing and is probably what you will see in code examples.
 But notice the ListenAndServe call: we're still passing in nil, which means the DefaultServeMux is used.
 For better security, we want to create a local server mux and use that instead of the default one.
